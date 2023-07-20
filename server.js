@@ -26,14 +26,22 @@ const connectDB = require('./config/connectDB');
 
 connectDB();
 
-
-const PORT= process.env.PORT ;
-
-//  7 create routes
-
 app.use("/api/contact",require("./routes/contact"));
 
 app.use("/api/user",require("./routes/user"));
+
+app.use((req , res)=> {
+    res.send('api is running')
+} )
+
+
+const PORT= process.env.PORT || 3043;
+
+//  7 create routes
+
+
+
+
 
 
 
